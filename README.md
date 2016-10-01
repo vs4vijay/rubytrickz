@@ -3,11 +3,30 @@ rubytrickz
 
 ## Codebase
 
-```
+```ruby
+#!/usr/bin/ruby
 class Rubytrickz
 
+  attr_accessor :count  
+
+  count = 1
+  puts "My PID is #{Process.pid}"
+  puts DATA.read
+  puts
+
+  def initialize
+    count = 1
+  end
+
+  @here_doc = <<-MYDOC
+    This is here doc, You can put any text/paragraph
+  MYDOC
+
+  puts "Here Doc : #@here_doc"
+  
   trap(:INT) {
     puts "This is Interrupt handler, It will execute on Ctrl+C"
+    exit if (count += 1) > 3
   }
 
   at_exit {
@@ -19,4 +38,7 @@ class Rubytrickz
   end
 
 end
+
+__END__
+You can put any text here, It will not interpreted by Ruby
 ```
