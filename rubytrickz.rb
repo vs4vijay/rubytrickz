@@ -5,6 +5,7 @@ class Rubytrickz
 
   count = 1
   puts "My PID is #{Process.pid}"
+  puts "My PID is using #{`ps -o rss= -p #{Process.pid}`.to_i/1024} MB of memory"
   puts DATA.read
   puts
 
