@@ -31,6 +31,16 @@ class Rubytrickz
     # Infinite loop
   end
 
+  # Merge two hashes
+  default_opts = { :test => 1, :original => 'thing' }
+  overrides = { test: '42', :some_new_thing => 'cats' }
+  default_opts.merge(overrides)
+  #{
+  #              :test => "42",
+  #          :original => "thing",
+  #    :some_new_thing => "cats"
+  #}
+
 end
 
 __END__
