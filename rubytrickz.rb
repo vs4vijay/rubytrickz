@@ -27,6 +27,11 @@ class Rubytrickz
     puts "This is Exit hook, It will run on exit."
   }
 
+  square = ->(x) { x * x }
+
+  # You can call any callable with .()
+  puts square.(2)  # -> 4
+
   loop do
     # Infinite loop
   end
